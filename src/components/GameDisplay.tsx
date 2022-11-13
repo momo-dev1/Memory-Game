@@ -55,20 +55,8 @@ const GameDisplay = (): JSX.Element => {
   }, [score]);
 
   useEffect(() => {
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedCards]);
-
-  const handleClick = (cardIndex: number, card: CardObj) => {
-    if (isPlaying) {
-      if (selectedCards.length < 2) {
-        cardClickSFX.play();
-        setFlippedStatus(cardIndex);
-        updateSelectedCards(card);
-      } else {
-      }
-    }
-  };
 
   const setFlippedStatus = (cardIndex: number) => {
     if (randomCards) {
@@ -88,10 +76,20 @@ const GameDisplay = (): JSX.Element => {
       setRandomCards(newState);
     }
   };
-
-  const updateSelectedCards = (card: CardObj) => {
-   
+  const updateSelectedCards = (card: CardObj) => { };
+  
+  const handleClick = (cardIndex: number, card: CardObj) => {
+    if (isPlaying) {
+      if (selectedCards.length < 2) {
+        cardClickSFX.play();
+        setFlippedStatus(cardIndex);
+        updateSelectedCards(card);
+      } else {
+      }
+    }
   };
+
+  
 
   const resetGame = () => {
     setScore(0);
@@ -128,13 +126,13 @@ const GameDisplay = (): JSX.Element => {
 };
 
 const GameContainer = styled.main`
-  width: min(99%, 1000px);
+  width: min(80%, 800px);
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 82vh;
+  height: 75vh;
   box-shadow: var(--oxford-blue-light) 0px 1px 6px;
   border-radius: 0.5rem;
   padding: 2rem 0 0 0;

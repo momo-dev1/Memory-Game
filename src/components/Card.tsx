@@ -42,8 +42,8 @@ const CardContainer = styled.div<CardFlippedImgProps>`
       ? "4px inset var(--violet-blue-crayola)"
       : "1px inset var(--oxford-blue)"};
   border-radius: 0.5rem;
-  width: min(18vw, 7.5rem);
-  height: min(22vw, 9.5rem);
+  width: min(18vw, 8.5rem);
+  height: min(22vw, 10.5rem);
   display: flex;
   justify-content: center;
   align-items: center;
